@@ -1,0 +1,61 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Node (frontend/)
+node_modules/
+dist/
+build/
+
+# Environments
+.env
+*.env
+.env.*
+swarm_orchestrator/.env
+
+# Runtime artifacts (never commit)
+swarm_orchestrator/.strategies/
+swarm_orchestrator/scripts_library/
+swarm_orchestrator/data/scenarios/
+# User replay CSVs saved by POST /api/replay/upload (local, non-Docker runs)
+swarm_orchestrator/data/uploads/
+*.db
+*.db-wal
+*.db-shm
+*.log
+
+# Notebook: the HTML source is tracked, the rendered PDF is a build artifact
+# (it lives on the OneDrive Desktop -- see notebook/build.py)
+notebook/*.pdf
+graphify-out/
+tech_stack_rationale.html
+
+# Generated video projects (renders + audio are large build artifacts, ~66 MB)
+videos/
+
+# Personal working notes
+refurbish.md
+refurbish2.md
+CHRONOS_TRAINING_REPORT.pdf
+member_work_division.md
+
+AKASH_WORK_REPORT.pdf
+ARYAN_WORK_REPORT.pdf
+KRISHNA_WORK_REPORT.pdf
+refurbish_v1_2026-09-29.md
+
+# Real NSE reference data (Kaggle, ~55 MB/stock)
+# Fetched by the validation data pipeline
+swarm_orchestrator/data/real/
+
+Banti_Backtesting_Tasks_Explained.pdf
+Chronos_Architecture_and_Change_Report.pdf
+Chronos_Explained_Simply.pdf
+# Training artifacts (rebuilt data, runs, checkpoints) and agent decision logs
+swarm_orchestrator/training/data/parquet/
+swarm_orchestrator/training/runs/
+swarm_orchestrator/logs/thoughts/
+
+# NIFTY-100 1-minute parquet built from the Kaggle dataset (~1.5 GB); rebuild it, do not commit it
+swarm_orchestrator/training/data/parquet_n100/

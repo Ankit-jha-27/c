@@ -1,0 +1,43 @@
+# Chronos - complete, tested dependency manifest (Python 3.11+)
+# Core numerics & data
+numpy>=2.0
+pandas>=2.2
+sortedcontainers>=2.4
+
+# Networking / messaging
+pyzmq>=25.1
+
+# Machine learning (agent brains - inference; training uses the same stack)
+torch>=2.2
+stable-baselines3>=2.3
+gymnasium>=0.29
+
+# Web bridge (ASGI, async-native WebSockets)
+fastapi>=0.111
+uvicorn[standard]>=0.30
+# Multipart form parsing -- FastAPI needs it for UploadFile (POST /api/replay/upload)
+python-multipart>=0.0.9
+
+# LLM macro oracle (tier 1 Gemini SDK; tier 2 Groq is a plain HTTP call on
+# httpx, which is listed below and is a RUNTIME dependency of oracle.py)
+google-genai>=1.0
+
+# Strategy runner / FIX gateway
+simplefix>=1.0.17
+psutil>=5.9
+
+# Reporting (PDF trade/outcome reports)
+reportlab>=4.0
+
+# Configuration (.env; agents/config/*.yaml is read by agents/execution.py)
+python-dotenv>=1.0
+pyyaml>=6.0
+
+# Request/response models -- imported directly by bridge.py, analytics/ and features/
+pydantic>=2.0
+
+# HTTP client -- oracle.py's Groq tier at runtime, and the FastAPI test client
+httpx>=0.27
+
+# Testing (tests/test_validation_stats.py also needs validation/requirements.txt)
+pytest>=8.0
