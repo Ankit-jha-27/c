@@ -6,7 +6,7 @@ export default function AuthButton({ mode = "signup", className = "btn", childre
   return (
     <>
       <Show when="signed-out">
-        <Clerk mode="modal" forceRedirectUrl={API}>
+        <Clerk mode="modal" forceRedirectUrl="/dashboard">
           <button className={className}>{children}</button>
         </Clerk>
       </Show>
