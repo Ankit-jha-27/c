@@ -78,7 +78,6 @@ function Landing() {
             <h1>Backtest with <em>yourself</em> in the market.</h1>
             <p className="lead">Chronos runs a living limit order book populated by AI agents. Your orders match real resting liquidity, move the price, and the market reacts. Not what happened — what would have happened, with you in it.</p>
             <div className="cta">
-              <AuthButton mode="signup" className="btn p lg">Launch the simulator →</AuthButton>
               <a className="btn lg" href={GITHUB} target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
             <div className="note">Price comes only from real trades in the book. No random walk.</div>
@@ -134,7 +133,7 @@ function Landing() {
           <h2>See what your strategy does to the market.</h2>
           <p className="lead">Create an account and run your first reactive simulation.</p>
           <div className="cta">
-            <AuthButton mode="signup" className="btn p lg">Get started free</AuthButton>
+
             <AuthButton mode="signin" className="btn lg">Sign in</AuthButton>
           </div>
         </div></section>

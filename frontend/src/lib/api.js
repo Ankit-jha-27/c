@@ -4,10 +4,11 @@ export const API = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 // so fetch a fresh one per request instead of storing it.
 export async function apiFetch(getToken, path, opts = {}) {
   const token = await getToken();
+  const isFormData = typeof FormData !== "undefined" && opts.body instanceof FormData;
   const res = await fetch(`${API}${path}`, {
     ...opts,
     headers: {
-      "Content-Type": "application/json",
+      ...(!isFormData && opts.body ? { "Content-Type": "application/json" } : {}),
       ...opts.headers,
       Authorization: `Bearer ${token}`,
     },
